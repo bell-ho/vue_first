@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <a v-if="flag">두잇 Vue.js</a>
+    <ul>
+        <li v-for="system in systems">{{ system }}</li>
+    </ul>
+    <p v-show="flag">두잇 Vue.js</p>
+    <h5 v-bind:id="uid">뷰 입문서</h5>
+    <button v-on:click="popupAlert">경고 창 버튼</button>
+    <button v-on:click="clickBtn">클릭</button>
+    <p>{{ message }}</p>
+    <button v-on:click="reveredMessage">문자열 역순</button>
+
+    <input v-model="message">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            flag: true,
+            systems: ['android ', 'ios', 'window'],
+            uid: 10,
+            message: 'Hello Vue.js'
+        },
+        computed: {},
+        watch: {
+            message: function (data) {
+                console.log("message의 값이 바뀜 : " + data);
+            }
+        },
+        methods: {
+            popupAlert: function () {
+                return alert('경고창 표시')
+            },
+            clickBtn: function (event) {
+                console.log(event)
+            },
+            reveredMessage: function () {
+                computed: {
+                    this.message = this.message.split('').reverse().join('')
+                    return this.message;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

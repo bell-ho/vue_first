@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-bind:id="idA">아이디 바인딩</p>
+    <p v-bind:class="classA">클래스 바인딩</p>
+    <p v-bind:style="styleA">스타일 바인딩</p>
+</div>
+
+<!--자바스크립트 표현식-->
+<div id="app2">
+    <p>{{ message }}</p>
+    <p>{{ message + "!!!" }}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
+
+
+    <!-- 선언문 사용 불가능 {{var a = 10;}}</p>-->
+    <!-- 분기문 사용 불가능 {{if (true) {return 100} }}-->
+
+    <!--    삼항연산자 표현가능-->
+    {{ 3+6 > 5 ? 100 : 0 }}
+
+    <!--    되긴하지만 복잡한 연산은 인스턴스 안에서 처리하고 화면에는 간단한 연산만..-->
+    {{ message.split('').reverse().join('') }}
+    {{ reveredMessage }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            idA: 10,
+            classA: 'container',
+            styleA: 'color:blue'
+        }
+    });
+
+    new Vue({
+        el: '#app2',
+        data: {
+            message: 'hello vue.js',
+        },
+        computed: {
+            reveredMessage: function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</body>
+</html>

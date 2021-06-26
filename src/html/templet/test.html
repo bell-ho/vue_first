@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <p v-bind:id="uid"></p>
+    <p v-if="flag">v-if false면 삭제</p>
+    <p v-show="flag">v-show false면 display:none</p>
+    <button v-on:click="eventMethod">클릭</button>
+    <button v-on:click="clickBtn">클릭</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js',
+            msg: 'Hi jj',
+            uid:'10',
+            flag:true
+        },
+        methods:{
+            clickBtn: function () {
+                console.log("clickBtn");
+            },
+            eventMethod: function () {
+                console.log("eventMethod");
+            }
+        }
+    })
+</script>
+</body>
+</html>
