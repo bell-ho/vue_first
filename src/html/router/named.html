@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-view name="header"></router-view>
+    <router-view></router-view> <!--아무것도 안쓰면 디폴트-->
+    <router-view name="footer"></router-view>
+</div>
+
+<script src="http://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="http://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+<script>
+    const Body = {
+        template: '<div>바디</div>'
+    };
+    const Header = {
+        template: '<div>헤더</div>'
+    };
+    const Footer = {
+        template: '<div>푸터</div>'
+    };
+    const LoginBody = {
+        template: '<div>로그인바디</div>'
+    };
+    const LoginHeader = {
+        template: '<div>로그인헤더</div>'
+    };
+    const LoginFooter = {
+        template: '<div>로그인푸터</div>'
+    };
+
+    const router = new VueRouter({
+        routes: [
+            {
+                path: '/',
+                components: {   //자식컴포넌트를 넣을 땐 component를 쓰지만 하나의 컴포넌트를 라우터에 추가 시킬때 components 를 사용한다
+                    default: Body,
+                    header: Header,
+                    footer: Footer
+                }
+            },
+            {
+                path: '/login',
+                components: {
+                    default: LoginBody,
+                    header: LoginHeader,
+                    footer: LoginFooter
+                }
+            }
+        ]
+    });
+
+    const app = new Vue({
+        router
+    }).$mount('#app');
+</script>
+</body>
+</html>
