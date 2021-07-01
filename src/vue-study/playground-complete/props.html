@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <!--    <app-header v-bind:프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header>-->
+    <app-header v-bind:message="msg"></app-header>
+    <app-content v-bind:message2="msg2"></app-content>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    const appHeader = {
+        props   : ['message'],    //대괄호:['프롭스이름']
+        template: '<h1>{{message}}</h1>', //상컴의 data객체가 들어가있다고 이해
+    }
+
+    const appContent = {
+        props   : ['message2'],
+        template: '<h1>{{message2}}</h1>',
+    }
+
+    new Vue({
+        el          : '#app'
+        , components: {
+            'app-header' : appHeader,
+            'app-content': appContent
+        },
+        data        : {
+            msg : '하이 헬로우',
+            msg2: '니하오'
+        },
+    });
+</script>
+</body>
+</html>
