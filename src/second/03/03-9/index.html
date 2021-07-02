@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+<!--	3. child-component가 정의한 show-log로 인해 상위 컴포넌트의 printText 실행-->
+	<child-component v-on:show-log="printText"></child-component>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('child-component', {
+        template: '<button v-on:click="showLog">show</button>'  //1.버튼을 누르면 클릭이벤트로 showLog실행
+        , methods: {
+            showLog: function () {
+                this.$emit('show-log'); //2.showLog 메소드안에 show-log 이벤트 방출
+            }
+        }
+    })
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello'
+        },
+        methods: {
+            printText: function () {
+                console.log('recived an event');
+            }
+        }
+    })
+</script>
+</body>
+</html>
