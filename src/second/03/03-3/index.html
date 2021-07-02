@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	<my-component></my-component>
+<!-- 1. 상위 컴포의 message를 하위컴포 localprops로 전달-->
+	<app-header v-bind:localprops="message"></app-header>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('my-component', {
+        template:'<div>전역컴포</div>'
+    });
+
+    const appHeader = {
+        props:['localprops'], //2. 전달받은 localprops , localprops에는 message가 있음
+        template: '<div>{{localprops}}</div>'   //3. message가 있는 localprops 넣기
+    }
+
+    new Vue({
+        el: '#app',
+	    components:{
+            'app-header': appHeader
+	    },
+	    data:{
+            message: '메세지'
+	    }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	<todo-component></todo-component>
+	<todo-list></todo-list>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	Vue.component('todo-component',{
+	    template : '<div>todo component</div>'
+	})
+
+	const todoList = {
+	    template: '<p>local component</p>'
+	}
+
+    const app = new Vue({
+        el: '#app'
+	    ,data:{
+            message:'this is a parent component'
+	    },
+	    components:{
+            'todo-list':todoList
+	    }
+    });
+</script>
+</body>
+</html>
