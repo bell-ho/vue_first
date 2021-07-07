@@ -1,0 +1,6 @@
+node -v
+npm -v
+npm install -g @vue/cli
+sudo npm install -g @vue/cli <==에러가 날때
+vue create vue-cli  <== vue 4.x 버전 일시 vue2 선택
+cd vue-cli
