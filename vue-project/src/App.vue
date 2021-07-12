@@ -3,7 +3,12 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/databindinghtml">Data Binding Html</router-link> |
-    <router-link to="/databindinginputtext">Data Binding InputText</router-link>
+    <router-link to="/databindinginputtext">Data Binding InputText</router-link> |
+    <router-link to="/databindingtextarea">Data Binding Textarea</router-link> |
+    <router-link to="/databindingselect">Data Binding Select</router-link> |
+    <router-link to="/databindingchecked">Data Binding Checked</router-link> |
+    <router-link to="/databindingradio">Data Binding Radio</router-link> |
+    <router-link to="/databindingimg">Data Binding Img</router-link>
   </div>
   <router-view/>
 </template>
