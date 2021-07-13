@@ -1,14 +1,28 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/databinding">Data Binding</router-link> |
-    <router-link to="/databindinghtml">Data Binding Html</router-link> |
-    <router-link to="/databindinginputtext">Data Binding InputText</router-link> |
-    <router-link to="/databindingtextarea">Data Binding Textarea</router-link> |
-    <router-link to="/databindingselect">Data Binding Select</router-link> |
-    <router-link to="/databindingchecked">Data Binding Checked</router-link> |
-    <router-link to="/databindingradio">Data Binding Radio</router-link> |
+    <router-link to="/">Home</router-link>
+    <br>
+    <router-link to="/databinding">Data Binding</router-link>
+    <br>
+    <router-link to="/databindinghtml">Data Binding Html</router-link>
+    <br>
+    <router-link to="/databindinginputtext">Data Binding InputText</router-link>
+    <br>
+    <router-link to="/databindingtextarea">Data Binding Textarea</router-link>
+    <br>
+    <router-link to="/databindingselect">Data Binding Select</router-link>
+    <br>
+    <router-link to="/databindingchecked">Data Binding Checked</router-link>
+    <br>
+    <router-link to="/databindingradio">Data Binding Radio</router-link>
+    <br>
     <router-link to="/databindingimg">Data Binding Img</router-link>
+    <br>
+    <router-link to="/databindingbutton">Data Binding Button</router-link>
+    <br>
+    <router-link to="/databindingclass">Data Binding Class</router-link>
+    <br>
+    <router-link to="/databindinglist">Data Binding List</router-link>
   </div>
   <router-view/>
 </template>
