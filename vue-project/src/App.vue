@@ -31,6 +31,8 @@
     <router-link to="/databindingstyle">DataBinding Style</router-link>
     <br>
     <router-link to="/eventchange">Event Change</router-link>
+    <br>
+    <router-link to="/computed">Computed Watch</router-link>
   </div>
   <router-view/>
 </template>
