@@ -10,12 +10,12 @@
       </tr>
       </thead>
       <tbody>
-        <tr :key="i" v-for="(product,i) in productList">
-          <td>{{ product.product_name }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.category }}</td>
-          <td>{{ product.delivery_price }}</td>
-        </tr>
+      <tr :key="i" v-for="(product,i) in productList">
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.delivery_price }}</td>
+      </tr>
       </tbody>
     </table>
   </div>

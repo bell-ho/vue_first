@@ -23,6 +23,14 @@
     <router-link to="/databindingclass">Data Binding Class</router-link>
     <br>
     <router-link to="/databindinglist">Data Binding List</router-link>
+    <br>
+    <router-link to="/renderingvif">Rendering V-if</router-link>
+    <br>
+    <router-link to="/eventclick">Event Click</router-link>
+    <br>
+    <router-link to="/databindingstyle">DataBinding Style</router-link>
+    <br>
+    <router-link to="/eventchange">Event Change</router-link>
   </div>
   <router-view/>
 </template>

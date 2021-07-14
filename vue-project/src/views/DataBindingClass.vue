@@ -3,9 +3,7 @@
       'active':isActive, 'text-red':hasError }">
     Class Binding
   </div>
-  <div v-bind:style="styleObject">
-    인라인 스타일 바인딩
-  </div>
+
 
 </template>
 
@@ -15,12 +13,8 @@ export default {
   components: {},
   data() {
     return {
-      isActive: true,
-      hasError: false,
-      styleObject: {
-        color: 'red',
-        fontsize: '13px'
-      },
+      isActive: true
+      , hasError: false
     };
   },
   setup() {
@@ -35,7 +29,9 @@ export default {
   unmounted() {
 
   },
-  methods: {}
+  methods: {
+
+  }
 }
 </script>
 
