@@ -33,6 +33,8 @@
     <router-link to="/eventchange">Event Change</router-link>
     <br>
     <router-link to="/computed">Computed Watch</router-link>
+    <br>
+    <router-link to="/databindinglist2">Data Binding List2</router-link>
   </div>
   <router-view/>
 </template>
